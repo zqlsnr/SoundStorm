@@ -1,0 +1,66 @@
+{
+    "data": {
+        "filter_length": 2048,
+        "hop_length": 320,
+        "sampling_rate": 24000,
+        "training_files": "dataset/zh_ras_M010/",
+        "validation_files": "dataset/zh_ras_M010_val/"
+    },
+    "model": {
+        "codebook_size": 1024,
+        "num_quantizers": 12,
+        "dim": 1024,
+        "ff_dim": 4096,
+        "n_heads": 8,
+        "n_layers": 6,
+        "kernel_size": 5,
+        "steps": [
+            16,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+        ],
+        "use_spectral_norm": false
+    },
+    "train": {
+        "adam_betas": [
+            0.9,
+            0.99
+        ],
+        "all_in_mem": false,
+        "amp": false,
+        "bf16": true,
+        "cfg_path": "config.json",
+        "ema_decay": 0.995,
+        "ema_update_every": 10,
+        "epochs": 10000,
+        "eval_interval": 800,
+        "fp16_run": false,
+        "gradient_accumulate_every": 1,
+        "keep_ckpts": 3,
+        "learning_rate": 0.0001,
+        "log_interval": 200,
+        "logs_folder": "logs",
+        "lr_decay": 0.999875,
+        "num_samples": 1,
+        "num_workers": 0,
+        "results_folder": "results",
+        "sampling_timesteps": 250,
+        "save_and_sample_every": 5000,
+        "seed": 1234,
+        "split_batches": true,
+        "timesteps": 1000,
+        "train_batch_size": 128,
+        "train_num_steps": 1000000,
+        "use_ddim": true,
+        "warmup_epochs": 0
+    }
+}
